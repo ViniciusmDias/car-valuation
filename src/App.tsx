@@ -1,8 +1,15 @@
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import { Routes } from './routes/index';
+import { Contexts } from './contexts';
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <Router>
+      <Contexts>
+        <Routes />
+      </Contexts>
+    </Router>
   );
 }
 
