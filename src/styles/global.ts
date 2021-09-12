@@ -31,10 +31,10 @@ const globalStyle = createGlobalStyle`
   }
 
   * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    margin: 0;
     outline: 0;
+    padding: 0;
   
     ::-webkit-scrollbar {
       height: 0.3rem;
@@ -53,9 +53,9 @@ const globalStyle = createGlobalStyle`
   }
 
   body  {
+    -webkit-font-smoothing: antialiased;
     background: ${({ theme }: GlobalThemeProps) => theme.background};
     color: ${({ theme }: GlobalThemeProps) => theme.text};
-    -webkit-font-smoothing: antialiased;
   }
 
   body, input, button, textarea, select, option {
@@ -85,9 +85,9 @@ const globalStyle = createGlobalStyle`
 
   p {
     font-size: 1rem;
-    line-height: normal;
-    letter-spacing: normal;
     font-weight: 400;
+    letter-spacing: normal;
+    line-height: normal;
   }
 
   span {
@@ -109,13 +109,13 @@ const globalStyle = createGlobalStyle`
   }
 
   *::-webkit-scrollbar {
-    width: 0.5rem;
     height: 0.4rem;
+    width: 0.5rem;
   }
 
   *::-webkit-scrollbar-track {
-    opacity: 0.2;
     background: ${({ theme }: GlobalThemeProps) => theme.card};
+    opacity: 0.2;
   }
 
   *::-webkit-scrollbar-thumb {

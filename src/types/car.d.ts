@@ -3,6 +3,7 @@ interface Car {
   precoMedio: string;
   tetoPrecoMedio: string;
   pisoPrecoMedio: string;
+  precoFipe: string;
   tetoPrecoMedioVolanty: string;
   pisoPrecoMedioVolanty: string;
   precoMaximo: number;

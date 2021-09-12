@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
   align-items: center;
-  justify-content: space-between;
+  display: flex;
   height: 5rem;
-  position: relative;
+  justify-content: space-between;
   margin: 0 2rem;
+  position: relative;
 
   a {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
 
     img {
-      width: 2rem;
       height: 2rem;
+      width: 2rem;
     }
   }
 `;

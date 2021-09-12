@@ -1,46 +1,46 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 
   .switch {
-    position: relative;
     display: inline-block;
-    width: 4rem;
     height: 1.5rem;
+    position: relative;
+    width: 4rem;
   }
 
   .switch input {
+    height: 0;
     opacity: 0;
     width: 0;
-    height: 0;
   }
 
   .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: ${({ theme }) => theme.card};
     -webkit-transition: 0.2s;
-    transition: 0.2s;
+    background-color: ${({ theme }) => theme.card};
+    bottom: 0;
     box-shadow: 0 0 2px ${({ theme }) => theme.text};
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.2s;
   }
 
   .slider:before {
-    position: absolute;
+    -webkit-transition: 0.2s;
+    background-color: ${({ theme }) => theme.boxShadow};
+    bottom: 5px;
     content: '';
     height: 14px;
-    width: 14px;
     left: 7px;
-    bottom: 5px;
-    background-color: ${({ theme }) => theme.boxShadow};
-    -webkit-transition: 0.2s;
+    position: absolute;
     transition: 0.2s;
+    width: 14px;
   }
 
   input:checked + .slider {
@@ -48,8 +48,8 @@ export const Container = styled.div`
   }
 
   input:checked + .slider:before {
-    -webkit-transform: translateX(35px);
     -ms-transform: translateX(35px);
+    -webkit-transform: translateX(35px);
     transform: translateX(35px);
   }
 
@@ -64,11 +64,11 @@ export const Container = styled.div`
 `;
 
 export const Icons = styled.span`
-  width: 100%;
+  align-items: center;
   display: flex;
   justify-content: space-between;
   top: 25%;
-  align-items: center;
+  width: 100%;
 
   svg {
     color: var(--yellow);
