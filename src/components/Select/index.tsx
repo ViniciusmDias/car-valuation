@@ -55,5 +55,3 @@ export function Select({
     </S.Select>
   );
 }
-
-export default Select;

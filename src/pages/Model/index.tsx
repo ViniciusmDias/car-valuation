@@ -1,8 +1,13 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { Main } from '../../components/Main';
+import { ChangePageButton } from '../../components/ChangePageButton';
+import { Select } from '../../components/Select';
+import { Title } from '../../components/Title';
 import { useCar } from '../../contexts/car';
 import { api } from '../../services/api';
-import * as S from './styles';
+import { Content } from '../../components/Content';
+import { Footer } from '../../components/Footer';
 
 export function Model() {
   const { brand, model, setModel } = useCar();
@@ -17,37 +22,35 @@ export function Model() {
     setModelsOptions(models);
   }, [brand]);
 
-  const history = useHistory();
-
-  const nextPage = () => {
-    history.push(`/year`);
-  };
-
   useEffect(() => {
     getModels();
   }, [getModels]);
 
   return (
-    <S.Container>
-      <p>Agora nos diga o modelo do seu carro</p>
-
-      <S.Select>
-        <select
+    <Main>
+      <Content>
+        <Title text={`Você escolheu o carro da marca ${brand}`} />
+        <Select
+          id="brand"
+          title="Para prosseguir, precisamos saber o modelo do seu carro"
           placeholder="Selecione o modelo do seu carro"
-          onChange={(e) => {
-            setModel(e.target.value);
-            nextPage();
-          }}
+          onChange={setModel}
+          nextPageUrl="year"
           defaultValue={model}
-        >
-          <option value="">Selecione o modelo</option>
-          {modelsOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-      </S.Select>
-    </S.Container>
+          options={modelsOptions}
+        />
+      </Content>
+
+      <Footer>
+        <ChangePageButton url="" iconLeft={FaArrowLeft} text="Voltar" />
+        {brand && model && (
+          <ChangePageButton
+            url="/year"
+            iconRight={FaArrowRight}
+            text="Selecionar o ano"
+          />
+        )}
+      </Footer>
+    </Main>
   );
 }
