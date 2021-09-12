@@ -35,3 +35,8 @@ export const Select = styled.div`
     }
   }
 `;
+
+export const Footer = styled.footer`
+  display: flex;
+  justify-content: space-between;
+`;

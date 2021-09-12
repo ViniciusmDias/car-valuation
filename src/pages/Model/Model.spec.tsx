@@ -1,19 +1,19 @@
 import { render, cleanup, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { Home } from '.';
+import { Model } from '.';
 
 afterEach(() => {
   cleanup();
 });
 
-describe('Whens Home page renderize', () => {
-  it('Shows Creditas text in page', () => {
+describe('Whens Model page renderize', () => {
+  it('Shows modelo text in page', () => {
     render(
       <BrowserRouter>
-        <Home />
+        <Model />
       </BrowserRouter>,
     );
 
-    expect(screen.getByText('Creditas')).toBeInTheDocument();
+    expect(screen.getByText('modelo')).toBeInTheDocument();
   });
 });

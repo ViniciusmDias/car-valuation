@@ -5,7 +5,7 @@ import * as S from './styles';
 
 import { useTheme } from '../../contexts/theme';
 
-function ThemeToggler() {
+export function ThemeToggler() {
   const { themeToggler } = useTheme();
 
   return (
@@ -33,5 +33,3 @@ function ThemeToggler() {
     </S.Container>
   );
 }
-
-export default ThemeToggler;
