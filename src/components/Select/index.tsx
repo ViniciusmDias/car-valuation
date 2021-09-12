@@ -8,7 +8,8 @@ interface SelectProps {
   onChange: (value: string) => void;
   nextPageUrl: string;
   defaultValue: string;
-  options: string[];
+  options?: string[];
+  versionOptions?: Version[];
 }
 
 export function Select({
@@ -19,6 +20,7 @@ export function Select({
   nextPageUrl,
   defaultValue,
   options,
+  versionOptions,
 }: SelectProps) {
   const history = useHistory();
 
@@ -46,11 +48,18 @@ export function Select({
         <option value="" disabled>
           {placeholder}
         </option>
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
+        {versionOptions
+          ? versionOptions.map((option) => (
+              <option key={option.versionId} value={option.versionId}>
+                {option.version}
+              </option>
+            ))
+          : options &&
+            options.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
       </select>
     </S.Select>
   );
