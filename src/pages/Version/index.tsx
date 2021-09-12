@@ -1,8 +1,13 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { ChangePageButton } from '../../components/ChangePageButton';
+import { Content } from '../../components/Content';
+import { Footer } from '../../components/Footer';
+import { Main } from '../../components/Main';
+import { Select } from '../../components/Select';
+import { Title } from '../../components/Title';
 import { useCar } from '../../contexts/car';
 import { api } from '../../services/api';
-import * as S from './styles';
 
 export function Version() {
   const { brand, model, year, versionId, setVersionId } = useCar();
@@ -19,37 +24,35 @@ export function Version() {
     setVersionsOptions(versions);
   }, [brand, model, year]);
 
-  const history = useHistory();
-
-  const nextPage = () => {
-    history.push(`/car`);
-  };
-
   useEffect(() => {
     getVersions();
   }, [getVersions]);
 
   return (
-    <S.Container>
-      <p>Por gentileza, poderia nos informar a versão do carro?</p>
-
-      <S.Select>
-        <select
-          placeholder="Selecione a versão do seu carro"
-          onChange={(e) => {
-            setVersionId(e.target.value);
-            nextPage();
-          }}
+    <Main>
+      <Content>
+        <Title text={`Seu carro é da marca ${brand}, no modelo ${model}.`} />
+        <Select
+          id="version"
+          title="Para finalizar, nos diga a versão do seu automóvel?"
+          placeholder="Selecione a versão do carro"
+          onChange={setVersionId}
+          nextPageUrl="/car"
           defaultValue={versionId}
-        >
-          <option value="">Selecione a versão</option>
-          {versionsOptions.map((option) => (
-            <option key={option.versionId} value={option.versionId}>
-              {option.version}
-            </option>
-          ))}
-        </select>
-      </S.Select>
-    </S.Container>
+          versionOptions={versionsOptions}
+        />
+      </Content>
+
+      <Footer>
+        <ChangePageButton url="/year" iconLeft={FaArrowLeft} text="Voltar" />
+        {brand && model && year && versionId && (
+          <ChangePageButton
+            url="/car"
+            iconRight={FaArrowRight}
+            text="Descobrir o valor"
+          />
+        )}
+      </Footer>
+    </Main>
   );
 }
