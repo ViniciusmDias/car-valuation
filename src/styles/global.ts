@@ -58,8 +58,8 @@ const globalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  body, input, button, textarea {
-    font-family: 'Poppins', sans-serif;
+  body, input, button, textarea, select, option {
+    font-family: 'Nunito', sans-serif;
     font-size: 16px;
   }
 
@@ -68,7 +68,7 @@ const globalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 3.375rem;
   }
 
   h2 {
@@ -85,6 +85,9 @@ const globalStyle = createGlobalStyle`
 
   p {
     font-size: 1rem;
+    line-height: normal;
+    letter-spacing: normal;
+    font-weight: 400;
   }
 
   span {

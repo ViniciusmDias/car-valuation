@@ -1,4 +1,4 @@
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Home } from '.';
 
@@ -13,5 +13,7 @@ describe('Whens Home page renderize', () => {
         <Home />
       </BrowserRouter>,
     );
+
+    expect(screen.getByText('Creditas')).toBeInTheDocument();
   });
 });
