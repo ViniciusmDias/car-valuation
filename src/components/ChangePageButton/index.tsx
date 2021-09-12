@@ -15,7 +15,7 @@ export function ChangePageButton({
   iconRight: IconRight,
 }: NextPageButtonProps) {
   return (
-    <S.NextPageButton to={`/${url}`}>
+    <S.NextPageButton to={url}>
       {IconLeft && <IconLeft style={{ marginRight: '0.5rem' }} />}
       {text}
       {IconRight && <IconRight style={{ marginLeft: '0.5rem' }} />}

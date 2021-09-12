@@ -8,7 +8,7 @@ import GlobalStyle from '../styles/global';
 
 import { useTheme } from '../contexts/theme';
 import { lightTheme, darkTheme } from '../styles/themes';
-import Header from '../components/Header';
+import { Header } from '../components/Header';
 
 interface RouteProps extends ReactDOMRouteProps {
   isPrivate?: boolean;
