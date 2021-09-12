@@ -7,5 +7,5 @@ export const Container = styled.main`
   justify-content: space-between;
   margin: 0 auto;
   max-width: 60ch;
-  padding: 2rem 2rem;
+  padding: 0rem 2rem;
 `;

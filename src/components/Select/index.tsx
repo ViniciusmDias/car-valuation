@@ -5,7 +5,7 @@ interface SelectProps {
   id: string;
   title: string;
   placeholder: string;
-  onChange: (value: string) => void;
+  setState: (value: string) => void;
   nextPageUrl: string;
   defaultValue: string;
   options?: string[];
@@ -13,12 +13,12 @@ interface SelectProps {
 }
 
 export function Select({
-  id,
-  title,
-  placeholder,
-  onChange,
-  nextPageUrl,
-  defaultValue,
+  id = 'label',
+  title = 'Selecione algo no input',
+  placeholder = 'Selecione uma opção',
+  setState,
+  nextPageUrl = '/',
+  defaultValue = 'default',
   options,
   versionOptions,
 }: SelectProps) {
@@ -29,7 +29,7 @@ export function Select({
   };
 
   const handleChangeSelect = (newValue: string) => {
-    onChange(newValue);
+    setState(newValue);
     nextPage();
   };
 
@@ -41,7 +41,6 @@ export function Select({
         placeholder={placeholder}
         onChange={(e) => {
           handleChangeSelect(e.target.value);
-          nextPage();
         }}
         value={defaultValue}
       >

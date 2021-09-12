@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Text = styled.p`
   color: ${({ theme }) => theme.textSecondary};
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 `;
 
 export const CleanButton = styled.button`

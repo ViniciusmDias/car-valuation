@@ -1,15 +1,15 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import { Routes } from './routes/index';
 import { Contexts } from './contexts';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename="/">
       <Contexts>
         <Routes />
       </Contexts>
-    </Router>
+    </BrowserRouter>
   );
 }
 

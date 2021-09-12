@@ -29,12 +29,16 @@ export function Car() {
   const [loading, setLoading] = useState(true);
 
   const getCar = useCallback(async () => {
-    const response = await api.get(
-      `/brands/${brand}/models/${model}/years/${year}/versions/${versionId}`,
-    );
-    const newCar: Car = response.data;
-    setCar(newCar);
-    setLoading(false);
+    try {
+      const response = await api.get(
+        `/brands/${brand}/models/${model}/years/${year}/versions/${versionId}`,
+      );
+      const newCar: Car = response.data;
+      setCar(newCar);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
   }, [brand, model, year, versionId, setCar]);
 
   const cleanData = () => {
@@ -64,7 +68,7 @@ export function Car() {
             text={convertNumberToBRL(+car.precoMedio)}
           />
           <S.Text>
-            Trouxemos abaixo mais alguns informações sobre o seu automóvel.
+            Trouxemos abaixo mais algumas informações sobre o seu automóvel.
           </S.Text>
           {car.brand && (
             <h3>

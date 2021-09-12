@@ -17,14 +17,18 @@ export function Version() {
   const [loading, setLoading] = useState(true);
 
   const getVersions = useCallback(async () => {
-    const response = await api.get(
-      `/brands/${brand}/models/${model}/years/${year}/versions`,
-    );
+    try {
+      const response = await api.get(
+        `/brands/${brand}/models/${model}/years/${year}/versions`,
+      );
 
-    const versions: Version[] = response.data;
+      const versions: Version[] = response.data;
 
-    setVersionsOptions(versions);
-    setLoading(false);
+      setVersionsOptions(versions);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
   }, [brand, model, year]);
 
   useEffect(() => {
@@ -46,7 +50,7 @@ export function Version() {
             id="version"
             title="Para finalizar, nos diga a versão do seu automóvel?"
             placeholder="Selecione a versão do carro"
-            onChange={setVersionId}
+            setState={setVersionId}
             nextPageUrl="/car"
             defaultValue={versionId}
             versionOptions={versionsOptions}

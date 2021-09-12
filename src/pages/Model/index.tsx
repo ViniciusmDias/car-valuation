@@ -18,12 +18,16 @@ export function Model() {
   const [modelsOptions, setModelsOptions] = useState(['']);
 
   const getModels = useCallback(async () => {
-    const response = await api.get(`/brands/${brand}/models`);
+    try {
+      const response = await api.get(`/brands/${brand}/models`);
 
-    const models: string[] = response.data;
+      const models: string[] = response.data;
 
-    setModelsOptions(models);
-    setLoading(false);
+      setModelsOptions(models);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
   }, [brand]);
 
   useEffect(() => {
@@ -43,7 +47,7 @@ export function Model() {
             id="model"
             title="Para prosseguir, precisamos saber o modelo do seu carro"
             placeholder="Selecione o modelo do seu carro"
-            onChange={setModel}
+            setState={setModel}
             nextPageUrl="/year"
             defaultValue={model}
             options={modelsOptions}

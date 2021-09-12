@@ -17,12 +17,16 @@ export function Year() {
   const [loading, setLoading] = useState(true);
 
   const getYears = useCallback(async () => {
-    const response = await api.get(`/brands/${brand}/models/${model}/years`);
+    try {
+      const response = await api.get(`/brands/${brand}/models/${model}/years`);
 
-    const years: string[] = response.data;
+      const years: string[] = response.data;
 
-    setYearsOptions(years);
-    setLoading(false);
+      setYearsOptions(years);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
   }, [brand, model]);
 
   useEffect(() => {
@@ -42,7 +46,7 @@ export function Year() {
             id="year"
             title="De qual ano é o seu possante?"
             placeholder="Selecione o ano do seu carro"
-            onChange={setYear}
+            setState={setYear}
             nextPageUrl="/version"
             defaultValue={year}
             options={yearsOptions}

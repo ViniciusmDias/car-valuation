@@ -19,12 +19,16 @@ export function Home() {
   const [brandsOptions, setBrandsOptions] = useState(['']);
 
   const getBrands = useCallback(async () => {
-    const response = await api.get(`/brands`);
+    try {
+      const response = await api.get(`/brands`);
 
-    const brands: string[] = response.data;
+      const brands: string[] = response.data;
 
-    setBrandsOptions(brands);
-    setLoading(false);
+      setBrandsOptions(brands);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
   }, []);
 
   useEffect(() => {
@@ -47,7 +51,7 @@ export function Home() {
             id="brand"
             title="Para iniciar, comece selecionando a marca do seu carro"
             placeholder="Selecione a marca seu carro"
-            onChange={setBrand}
+            setState={setBrand}
             nextPageUrl="/model"
             defaultValue={brand}
             options={brandsOptions}

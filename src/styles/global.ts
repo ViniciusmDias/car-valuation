@@ -76,7 +76,7 @@ const globalStyle = createGlobalStyle`
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   h4 {
@@ -102,6 +102,10 @@ const globalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  select, option {
+    -webkit-appearance: none;
   }
 
   * {
