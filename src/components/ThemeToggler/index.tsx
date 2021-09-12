@@ -3,7 +3,7 @@ import { FaSun } from 'react-icons/fa';
 
 import * as S from './styles';
 
-import { useTheme } from '../../../../contexts/theme';
+import { useTheme } from '../../contexts/theme';
 
 function ThemeToggler() {
   const { themeToggler } = useTheme();

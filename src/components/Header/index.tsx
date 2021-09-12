@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo-creditas.svg';
-import ThemeToggler from './components/ThemeToggler';
+import ThemeToggler from '../ThemeToggler';
 
 import * as S from './styles';
 
