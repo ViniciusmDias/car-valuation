@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/car-valuation/static/js/main.cca684d8.chunk.js",
+    "main.js.map": "/car-valuation/static/js/main.cca684d8.chunk.js.map",
+    "runtime-main.js": "/car-valuation/static/js/runtime-main.14193c52.js",
+    "runtime-main.js.map": "/car-valuation/static/js/runtime-main.14193c52.js.map",
+    "static/js/2.2392046d.chunk.js": "/car-valuation/static/js/2.2392046d.chunk.js",
+    "static/js/2.2392046d.chunk.js.map": "/car-valuation/static/js/2.2392046d.chunk.js.map",
+    "index.html": "/car-valuation/index.html",
+    "static/js/2.2392046d.chunk.js.LICENSE.txt": "/car-valuation/static/js/2.2392046d.chunk.js.LICENSE.txt",
+    "static/media/logo-creditas.01a5d26d.svg": "/car-valuation/static/media/logo-creditas.01a5d26d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.14193c52.js",
+    "static/js/2.2392046d.chunk.js",
+    "static/js/main.cca684d8.chunk.js"
+  ]
+}
