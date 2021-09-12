@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { CarProvider } from './car';
 import { ThemeProvider } from './theme';
 
 interface ContextsProps extends React.HTMLAttributes<Element> {
@@ -6,5 +7,9 @@ interface ContextsProps extends React.HTMLAttributes<Element> {
 }
 
 export function Contexts({ children }: ContextsProps) {
-  return <ThemeProvider>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider>
+      <CarProvider>{children}</CarProvider>
+    </ThemeProvider>
+  );
 }
