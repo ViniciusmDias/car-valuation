@@ -41,7 +41,7 @@ export function Home() {
           title="Para iniciar, comece selecionando a marca do seu carro"
           placeholder="Selecione a marca seu carro"
           onChange={setBrand}
-          nextPageUrl="model"
+          nextPageUrl="/model"
           defaultValue={brand}
           options={brandsOptions}
         />
@@ -50,7 +50,7 @@ export function Home() {
       <Footer>
         {brand && (
           <ChangePageButton
-            url="model"
+            url="/model"
             iconRight={FaArrowRight}
             text="Selecionar o modelo"
           />

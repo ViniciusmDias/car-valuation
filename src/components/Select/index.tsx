@@ -23,7 +23,7 @@ export function Select({
   const history = useHistory();
 
   const nextPage = () => {
-    history.push(`/${nextPageUrl}`);
+    history.push(nextPageUrl);
   };
 
   const handleChangeSelect = (newValue: string) => {
@@ -36,7 +36,7 @@ export function Select({
       <p>{title}</p>
       <select
         id={id}
-        placeholder="Selecione a marca do seu carro"
+        placeholder={placeholder}
         onChange={(e) => {
           handleChangeSelect(e.target.value);
           nextPage();

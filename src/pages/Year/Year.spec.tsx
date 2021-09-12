@@ -1,19 +1,19 @@
 import { render, cleanup, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { Model } from '.';
+import { Year } from '.';
 
 afterEach(() => {
   cleanup();
 });
 
-describe('Whens Model page renderize', () => {
-  it('Shows text in page', () => {
+describe('Whens Year page renderize', () => {
+  it('Shows modelo text in page', () => {
     render(
       <BrowserRouter>
-        <Model />
+        <Year />
       </BrowserRouter>,
     );
 
-    expect(screen.getByText('Seu')).toBeInTheDocument();
+    expect(screen.getByText('modelo')).toBeInTheDocument();
   });
 });

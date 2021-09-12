@@ -29,9 +29,9 @@ export function Model() {
   return (
     <Main>
       <Content>
-        <Title text={`Você escolheu o carro da marca ${brand}`} />
+        <Title text={`Seu carro é da marca ${brand}.`} />
         <Select
-          id="brand"
+          id="model"
           title="Para prosseguir, precisamos saber o modelo do seu carro"
           placeholder="Selecione o modelo do seu carro"
           onChange={setModel}
