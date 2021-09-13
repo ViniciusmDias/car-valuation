@@ -7,6 +7,8 @@ type GlobalThemeProps = {
 
 const globalStyle = createGlobalStyle`
   :root {
+
+    font-size: 90%;
     //dark-mode
     --dark-background: #1A1B27;
     --dark-card: #202231;
@@ -61,6 +63,12 @@ const globalStyle = createGlobalStyle`
   body, input, button, textarea, select, option {
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
+  }
+
+  @media(min-width: 700px) {
+    :root{
+      font-size: 120%;
+    }
   }
 
   h1, h2, h3, h4, h5, h6, strong {

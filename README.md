@@ -24,3 +24,32 @@ Para colocar o projeto em funcionamento e visualizar os componentes no navegador
 3. Instale as dependências do projeto: `yarn`
 4. Inicie o modo de desenvolvimento: `yarn start`
 5. Abra seu navegador e entre em: <http://localhost:3000>
+
+## Estrutura do Repositório
+
+Às vezes, é útil saber para que servem todos esses arquivos diferentes...
+
+```
+/
+├─ public/
+├─ src/
+│  ├─ assets/           # Imagens
+│  │
+│  ├─ components/       # Todos os componentes reutilizáveis
+│  ├─ contexts/         # Contextos da aplicação, estados globais
+│  ├─ pages/            # Páginas
+│  ├─ routes/           # Rotas
+│  ├─ services/         # Api e funções de requisição;
+│  ├─ styles/           # Estilos globais
+│  ├─ types/            # Tipos globais
+│  └─ utils/            # Funções globais
+│
+├─ .env                 # Variáveis de ambiente
+├─ .eslintignore        # Regras ignoradas pelo ESLint
+├─ .eslintrc.json       # Preferências do ESLint
+├─ .gitignore           # Arquivos ignorados pelo git
+├─ package.json         # Project manifest
+├─ .prettier.config.js  # Configurações do Prettier
+├─ README.md            # This file
+├─ tsconfig.json        # Configurações do Typescript
+└─ yarn.lock            # Configurações do Yarn

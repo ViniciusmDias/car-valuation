@@ -103,14 +103,20 @@ export function Car() {
         </Content>
       )}
       <Footer>
-        <ChangePageButton url="/version" iconLeft={FaArrowLeft} text="Voltar" />
         <S.CleanButton type="button" onClick={() => cleanData()}>
           <ChangePageButton
             url="/"
-            iconRight={FaArrowRight}
+            iconLeft={FaArrowLeft}
             text="Pesquisar outro carro"
           />
         </S.CleanButton>
+        <S.LinkExternal
+          href="https://auto.creditas.com/vender-carro"
+          title="Avaliação"
+        >
+          Avaliação
+          <FaArrowRight style={{ marginLeft: '0.5rem' }} />
+        </S.LinkExternal>
       </Footer>
     </Main>
   );

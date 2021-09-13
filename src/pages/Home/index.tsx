@@ -38,12 +38,13 @@ export function Home() {
   return (
     <Main>
       <Content>
-        <Subtitle text="Olá, boa tarde!" />
+        <Subtitle text="Olá, bem vindo!" />
         <S.Description>
-          Bem vindo ao novo sistema da <span> Creditas </span>onde buscamos
-          responder a seguinte pergunta:
+          Descubra quanto vale seu carro <br />
+          Saiba agora mesmo uma estimativa de preço pro seu carro e agende sua
+          avaliação <span>gratuita</span>.
         </S.Description>
-        <Title text="Quanto vale o meu carro?" />
+        <Title text="Conte sobre seu carro pra gente" />
         {loading ? (
           <Loading />
         ) : (
